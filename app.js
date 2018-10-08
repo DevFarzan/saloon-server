@@ -35,8 +35,16 @@ app.use('/api/dashboard', dashboard);
 //     res.send('Hello Server!!!')
 // })
 
-const port = process.env.PORT || 3000;
+// app.use(function (req, res, next) {
+//     if(req.headers['x-forwarded-proto'] === 'http'){
+//         next();
+//     }else {
+//         res.redirect('http://' + req.hostname + req.url);
+//     }
+// })
 
-app.listen(port, () => {
-    console.log('server is up and running on port ' + port)
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log('server is up and running on port ' + PORT)
 });
