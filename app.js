@@ -31,6 +31,10 @@ app.use('/api/auth', auth);
 app.use('/verify', verified);
 app.use('/api/dashboard', dashboard);
 
+// app.get('/', (req, res) => {
+//     res.send('Hello Server!!!')
+// })
+
 // app.use(function (req, res, next) {
 //     if(req.headers['x-forwarded-proto'] === 'http'){
 //         next();
