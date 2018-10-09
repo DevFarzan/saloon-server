@@ -31,9 +31,9 @@ app.use('/api/auth', auth);
 app.use('/verify', verified);
 app.use('/api/dashboard', dashboard);
 
-// app.get('/', (req, res) => {
-//     res.send('Hello Server!!!')
-// })
+app.get('/', (req, res) => {
+    res.send('Saloon App Server is running!!!')
+})
 
 // app.use(function (req, res, next) {
 //     if(req.headers['x-forwarded-proto'] === 'http'){
