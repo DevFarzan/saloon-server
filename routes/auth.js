@@ -22,8 +22,16 @@ router.post('/', async (req, res) => {
         return res.status(400).send('Incorrect email or password.');
     }
 
-    const token = jwt.sign({_id: user._id}, 'Privatekey');
-    res.send(token + 'login successfully');
+    if(user && validPassword){
+        res.send({
+            code: 200,
+            emailStatus: 'Login Successfully',
+            content: _.pick(user, ['_id', 'name', 'email', 'number'])
+        })
+    }
+
+    // const token = jwt.sign({_id: user._id}, 'Privatekey');
+    // res.send(token + 'login successfully');
 });
 
 function validate(req) {
