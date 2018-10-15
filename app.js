@@ -7,6 +7,8 @@ const verified = require('./routes/verifyEmail');
 const dashboard = require('./routes/dashboard');
 const employees = require('./routes/employees');
 const getEmployees = require('./routes/getEmployees');
+const services = require('./routes/services');
+const getServices = require('./routes/getServices');
 const express = require('express');
 const bodyParser = require('body-parser');
 const expressValidator =  require('express-validator') ;
@@ -34,6 +36,8 @@ app.use('/verify', verified);
 app.use('/api/dashboard', dashboard);
 app.use('/api/employees', employees);
 app.use('/api/getEmployees', getEmployees);
+app.use('/api/services', services);
+app.use('/api/getServices', getServices);
 
 app.get('/', (req, res) => {
     res.send('Saloon App Server is running!!!')
