@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
         res.send({
             code: 200,
             emailStatus: 'Login Successfully',
-            content: _.pick(user, ['_id', 'name', 'email', 'number'])
+            content: _.pick(user, ['_id', 'name', 'email', 'number', 'role'])
         })
     }
 

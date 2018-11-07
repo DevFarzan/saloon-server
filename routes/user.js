@@ -16,7 +16,7 @@ router.post('/', async(req, res) => {
     if(user) {
         return res.status(400).send('That user already exits!');
     }else {
-        user = new User(_.pick(req.body, ['name', 'email', 'number', 'password', 'randomno', 'host', 'varifiedemail', 'block']));
+        user = new User(_.pick(req.body, ['name', 'email', 'number', 'password', 'randomno', 'host', 'varifiedemail', 'block', 'role']));
         const salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(user.password, salt);
         req.session.email = req.body.email;
@@ -29,7 +29,7 @@ router.post('/', async(req, res) => {
             res.send({
                 code: 200,
                 emailStatus: 'Email send',
-                content: _.pick(user, ['_id', 'name', 'email', 'number'])
+                content: _.pick(user, ['_id', 'name', 'email', 'number', 'role'])
             })
         }
     }

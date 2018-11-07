@@ -10,7 +10,8 @@ const User = new Schema({
     randomno: {type: String, minLength: 5, maxLength: 50},
     host: {type: String, minLength: 5, maxLength: 50},
     varifiedemail: {type: Boolean, default: false},
-    block: {type: Boolean, default: false}
+    block: {type: Boolean, default: false},
+    role: {type: String}
 })
 
 function validateUser(user) {
@@ -19,6 +20,7 @@ function validateUser(user) {
         email: Joi.string().min(5).max(255).required().email(),
         password: Joi.string().min(5).max(255).required(),
         number: Joi.string().min(11).max(12).required(),
+        role: Joi.string().min(4).max(7).required()
     };
     return Joi.validate(user, schema);
 };
