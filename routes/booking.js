@@ -6,7 +6,7 @@ const _ = require('lodash');
 router.post('/', async(req, res) => {
 	let data = req.body;
 	if(data.obj_id === ''){
-		let booking = new Booking(_.pick(data, ['name', 'email', 'number', 'emp_id', 'user_id', 'date', 'time', 'status']));
+		let booking = new Booking(_.pick(data, ['name', 'email', 'number', 'emp_id', 'emp_name', 'user_id', 'date', 'time', 'status', 'service']));
 		try{
 			let result = await booking.save();
 			res.send({
@@ -30,7 +30,9 @@ router.post('/', async(req, res) => {
 			booking.emp_id = data.emp_id;
 			booking.user_id = data.user_id;
 			booking.date = data.date;
-			booking.time = data.time
+			booking.time = data.time;
+			booking.emp_name = data.emp_name;
+			booking.service = data.service;
 
 			let result = await booking.save();
 			res.send({
