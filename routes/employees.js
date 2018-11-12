@@ -9,7 +9,7 @@ router.post('/', async(req, res) => {
 	if(employee){
 		return res.status(400).send('That employee already exits!');
 	}else {
-		employee = new Employees(_.pick(data, ['name', 'email', 'rating', 'active', 'activity', 'image', 'comments']));
+		employee = new Employees(_.pick(data, ['name', 'email', 'rating', 'active', 'activity', 'image', 'comments', 'emp_id']));
 		try{
 			let result = await employee.save();
 			res.send({

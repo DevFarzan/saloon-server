@@ -6,8 +6,10 @@ const Booking = new Schema({
 	email: {type: String},
 	number: {type: String},
 	emp_id: {type: String},
+	emp_name: {type: String},
 	user_id: {type: String},
 	date: {type: String},
+	service: {type: String},
 	time: {type: Object},
 	status: {type: String, default: 'process'}
 });
