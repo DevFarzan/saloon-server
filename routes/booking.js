@@ -33,6 +33,7 @@ router.post('/', async(req, res) => {
 			booking.time = data.time;
 			booking.emp_name = data.emp_name;
 			booking.service = data.service;
+			booking.status= data.status;
 
 			let result = await booking.save();
 			res.send({
