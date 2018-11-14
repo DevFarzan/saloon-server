@@ -9,6 +9,7 @@ const employees = require('./routes/employees');
 const getEmployees = require('./routes/getEmployees');
 const services = require('./routes/services');
 const getServices = require('./routes/getServices');
+const getUsers = require('./routes/getUsers');
 const booking = require('./routes/booking');
 const getBooking = require('./routes/getBooking');
 const express = require('express');
@@ -42,6 +43,7 @@ app.use('/api/services', services);
 app.use('/api/getServices', getServices);
 app.use('/api/booking', booking);
 app.use('/api/getBooking',getBooking);
+app.use('/api/getUser',getUsers);
 
 app.get('/', (req, res) => {
     res.send('Saloon App Server is running!!!')

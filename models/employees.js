@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const Employees = new Schema({
 	name: {type: String, required: true, minLength: 6, maxLength: 50},
 	email: {type: String, required: true, minLength: 5, maxLength: 255},
-	rating: {type: String, required: true, minLength: 6, maxLength: 50},
+	rating: {type: String},
 	active: {type: Boolean, default: false},
 	activity: {type: Array},
 	image: {type: String},
