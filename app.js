@@ -12,6 +12,8 @@ const getServices = require('./routes/getServices');
 const getUsers = require('./routes/getUsers');
 const booking = require('./routes/booking');
 const getBooking = require('./routes/getBooking');
+const aboutUs = require('./routes/aboutUs');
+const gallery = require('./routes/gallery');
 const express = require('express');
 const bodyParser = require('body-parser');
 const expressValidator =  require('express-validator') ;
@@ -44,6 +46,8 @@ app.use('/api/getServices', getServices);
 app.use('/api/booking', booking);
 app.use('/api/getBooking',getBooking);
 app.use('/api/getUser',getUsers);
+app.use('/api/aboutUs',aboutUs);
+app.use('/api/gallery',gallery);
 
 app.get('/', (req, res) => {
     res.send('Saloon App Server is running!!!')
